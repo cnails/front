@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+
+
+window.app = {
+    timestamp: parseInt((new Date()).getTime() / 1000),
+    jq: jQuery,
+    formAction: window.location.href,
+    leadToken: '5e445b921a34a0.38677132',
+    offers: {"9076":{"prepaid_info_html":"","delivery_price":"","currency":{"code":"KZT","name":"\u0442\u04a3\u0433"},"price":"9990","discount":"","price2":"19980","country":{"code":"KZ","name":"\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d"},"product_sku":"","link":"","id":9076},"9075":{"prepaid_info_html":"","delivery_price":"","currency":{"code":"KGS","name":"\u0441\u043e\u043c"},"price":"2990","discount":"","price2":"7980","country":{"code":"KG","name":"\u041a\u0438\u0440\u0433\u0438\u0437\u0438\u044f"},"product_sku":"","link":"","id":9075},"13750":{"prepaid_info_html":"","delivery_price":"","currency":{"code":"MDL","name":"\u043b\u0435\u0438"},"price":"450","discount":"","price2":"900","country":{"code":"MD","name":"\u041c\u043e\u043b\u0434\u0430\u0432\u0438\u044f"},"product_sku":"","link":"","id":13750},"11813":{"prepaid_info_html":"","delivery_price":"","currency":{"code":"RUB","name":"\u0440\u0443\u0431"},"price":"1290","discount":"50%","price2":"2580","country":{"code":"RU","name":"\u0420\u043e\u0441\u0441\u0438\u044f"},"product_sku":"","link":"","id":11813},"12362":{"prepaid_info_html":"","delivery_price":"","currency":{"code":"UZS","name":"\u0441\u0443\u043c"},"price":"259000","discount":"50","price2":"518000","country":{"code":"UZ","name":"\u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d"},"product_sku":"","link":"","id":12362},"6118":{"prepaid_info_html":"","delivery_price":"","currency":{"code":"UAH","name":"\u0433\u0440\u043d"},"price":"299","discount":"","price2":"598","country":{"code":"UA","name":"\u0423\u043a\u0440\u0430\u0438\u043d\u0430"},"product_sku":"","link":"","id":6118}},
+    currentOffer: {"prepaid_info_html":"","delivery_price":"","currency":{"code":"RUB","name":"\u0440\u0443\u0431"},"price":"1290","discount":"50%","price2":"2580","country":{"code":"RU","name":"\u0420\u043e\u0441\u0441\u0438\u044f"},"product_sku":"","link":"","id":11813},
+    allowedCountries: [],
+    _setOfferId: false,
+    
+    setOffer: function (offerId) {
+        if (offerId == this._setOfferId) {
+            return ;
+        }
+        this._setOfferId = offerId;
+        if (offerId) {
+            var offer = app.offers[offerId];
+            var previousOffer = app.currentOffer;
+            app.currentOffer = offer;
+            var event = this.jq.Event("offerchange");
+            event.previousOffer = previousOffer;
+            event.currentOffer = app.currentOffer;
+            this.jq(document).trigger(event);
+            this.updatePage(offer);
+        } else {
+            $('input[name=country]').val('');
+        }
+    },
+    
+    updatePage: function(offer) {
+        $('x-newprice').html(offer.price);
+        $('x-oldprice').html(offer.price2);
+        $('x-currency').html(offer.currency.name);
+        $('input[name=offer], select[name=offer]').val(offer.id);
+        $('input[name=country]').val(offer.country.code);
+    },
+
+    blockForm: function() {
+        // Блокируем кнопки при отправке формы
+        $('input[type=submit]', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        $('button', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        app.incompleteOrder.lock = true;
+        clearTimeout(app.incompleteOrder.timer);
+    },
+
+    unblockForm: function() {
+        $('input[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        $('button[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        app.incompleteOrder.lock = false;
+        clearTimeout(app.incompleteOrder.timer);
+    }
+
+};
+
+
+</script><script src="/shared/form.validate.js?10"></script>
+<script src="/shared/form.incomplete.js?10"></script>
+<script src="/shared/main2.js?12"></script>
+
+
+
+	
+	<title>Power Magnetic - магнитный корректор осанки</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=480">
+
+	<meta name="keywords" content="магнитный корректор осанки, Power Magnetic, Power Magnetic купить, Power Magnetic заказать, Power Magnetic стоимость, Power Magnetic цена, Power Magnetic отзывы">
+
+	<meta name="description" content="Принцип действия корректора предельно прост. Эластичные и прочные материалы отлично «держат» фигуру: спина остается прямой, а плечи — расправленными.">
+
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Power Magnetic - магнитный корректор осанки" />
+	<meta property="og:image" content="1.png" />
+	<meta property="og:site_name" content="Power Magnetic - магнитный корректор осанки" />
+	<meta property="og:description" content="Магнитный корректор осанки Magnetic Power! Скидка 50%" />
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+	
+	<style>
+  .form-control {    display: block;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    width: 400px;
+    height: 76px;
+    border: 1px solid #b8e0e3;
+    -webkit-border-radius: 38px;
+    -moz-border-radius: 38px;
+    border-radius: 38px;
+    background: #fff;
+    -webkit-box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Exo20', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+  
+  .country_chang {    display: block;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    width: 400px;
+    height: 76px;
+    border: 1px solid #b8e0e3;
+    -webkit-border-radius: 38px;
+    -moz-border-radius: 38px;
+    border-radius: 38px;
+    background: #fff;
+    -webkit-box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Exo20', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+  }  
+ </style>
+
+</head>
+<body>
+	
+	<div class="main_wrapper">
+
+		<!-- offer -->
+
+		<header class="offer_section offer_top">
+			<div class="info_block">
+				<div class="title_block">
+					<p class="subtitle">Магнитный корректор осанки</p>
+					<h1 class="main_title">Power Magnetic</h1>
+				</div>
+				<ul class="clearfix">
+					<li>Быстрое исправление осанки</li>
+					<li>Избавление от боли в спине</li>
+				</ul>
+				<div class="discount_block">
+					<div class="discount">Скидка <span>-50<i>%</i></span></div>
+				</div>
+			</div>
+			<ul class="benefits_list clearfix">
+				<li>Полезен для здоровья</li>
+				<li>Не стесняет движений</li>
+				<li>Не заметен под одеждой</li>
+				<li>Практичен и долговечен</li>
+			</ul>
+			<div class="price_block">
+				<div class="price_item old">
+					<div class="text">Обычная цена:</div>
+					<div class="value"><x-oldprice>2580</x-oldprice> <x-currency>руб</x-currency></div>
+				</div>
+				<div class="price_item new"><x-newprice>1290</x-newprice> <x-currency>руб</x-currency></div>
+			</div>
+			<a href="#order_form" class="button">Заказать со скидкой</a>
+		</header>
+
+		<!-- /offer -->
+
+		<!-- benefits -->
+
+		<section class="benefits_section">
+			<h2>Почему Power Magnetic необходим вашей спине?</h2>
+			<div class="benefits_list clearfix">
+				<div class="benefit_item">
+					<img src="images/benefits__benefit1_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<p>Быстрое исправление осанки</p>
+				</div>
+				<div class="benefit_item">
+					<img src="images/benefits__benefit2_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<p>Избавление от боли в спине</p>
+				</div>
+				<div class="benefit_item">
+					<img src="images/benefits__benefit3_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<p>Выпрямление линии плеч</p>
+				</div>
+				<div class="benefit_item">
+					<img src="images/benefits__benefit4_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<p>Укрепление позвоночника</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- /benefits -->
+
+		<!-- about -->
+
+		<section class="about_section">
+			<h2>Почему Power Magnetic эффективен</h2>
+			<p>Принцип действия корректора предельно прост. Эластичные и прочные материалы отлично «держат» фигуру: спина остается прямой, а плечи — расправленными.</p>
+			<img src="images/about__image.jpg" alt="Power Magnetic" title="Power Magnetic">
+			<p>В отличие от большинства аналогов, Power Magnetic не воздействует напрямую на позвоночник - с помощью магнитных пластин он укрепляет мышцы спины, которые уже сами придают телу естественное положение. Поэтому корректор не имеет противопоказаний. Может использоваться как мужчинами, так и женщинами, ограничений по возрасту также нет. К тому же, он совершенно незаметен - его комфортно носить под одеждой.</p>
+			<a href="#order_form" class="button">Заказать со скидкой</a>
+		</section>
+
+		<!-- /about -->
+
+		<!-- causes -->
+
+		<section class="causes_section">
+			<h2>Причины искривления осанки и болей в спине</h2>
+			<div class="causes_list">
+				<div class="cause_item">
+					<div class="image_block">
+						<img src="images/causes__cause1_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					</div>
+					<div class="text_block">
+						<div class="icon"></div>
+						<p>Слабые мышцы позвоночного корсета</p>
+					</div>
+				</div>
+				<div class="cause_item">
+					<div class="text_block">
+						<div class="icon"></div>
+						<p>Неправильное положение спины в сидячем положении</p>
+					</div>
+					<div class="image_block">
+						<img src="images/causes__cause2_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					</div>
+				</div>
+				<div class="cause_item">
+					<div class="image_block">
+						<img src="images/causes__cause3_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					</div>
+					<div class="text_block">
+						<div class="icon"></div>
+						<p>Отсутствие общеразвивающих физических нагрузок</p>
+					</div>
+				</div>
+				<div class="cause_item">
+					<div class="text_block">
+						<div class="icon"></div>
+						<p>Избыточный вес</p>
+					</div>
+					<div class="image_block">
+						<img src="images/causes__cause4_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- /causes -->
+
+		<!-- reviews -->
+
+		<section class="reviews_section">
+			<h2>Отзывы о нашем корректоре осанки</h2>
+			<div class="reviews_list owl-carousel">
+				<div class="review_item">
+					<img src="images/reviews__review1_photo.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<div class="author_info">Едена Кудас, 28 лет</div>
+					<p>Сидя долго за компьютером, возникли проблемы со спиной, что-то кардинальное предпринимать не хотелось. На помощь мне пришел магнитный корректор осанки Power Magnetic, который можно носить без всякой видимости для окружающих. Качественный, хорошо держит спину, ценовая категория такая что каждый может себе позволить. Легкий и не утруждает за целый день. Мне помогает.</p>
+				</div>
+				<div class="review_item">
+					<img src="images/reviews__review2_photo.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<div class="author_info">Алексей Веселов, 30 лет</div>
+					<p>Идеальной осанки у меня никогда не было, а после сидячей работы, она испортилась окончательно. Под вечер спина превращается в вопросительный знак. Решил позаботиться о прямой спине. Заказал на этом сайте корректор.  С помощью магнитного корректора спина держится ровно сама, без всяких усилий с моей стороны. Корректор действительно творит чудеса!</p>
+				</div>
+				<div class="review_item">
+					<img src="images/reviews__review3_photo.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<div class="author_info">Оксана Семенова, 27 лет</div>
+					<p>Корректор отлично держит осанку, когда сидишь за компьютером, контролируешь себя, спина выпрямляется, отлично подстраивается под форму тела. Со временем я начала замечать, что держать ровно спину входит в привычку и без корректора. Магнитная терапия помогает снять стресс, улучшает циркуляцию крови. Этот корректор унисекс, подходит как женщинам, так и мужчинам.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- /reviews -->
+
+		<!-- order steps -->
+
+		<section class="order_steps_section">
+			<h2>Как заказать Power Magnetic?</h2>
+			<div class="steps_list clearfix">
+				<div class="step_item">
+					<img src="images/order_steps__step1_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<div class="number">1</div>
+					<p>Оставляете заявку на нашем сайте</p>
+				</div>
+				<div class="step_item">
+					<img src="images/order_steps__step2_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<div class="number">2</div>
+					<p>Наш менеджер уточняет детали заказа</p>
+				</div>
+				<div class="step_item">
+					<img src="images/order_steps__step3_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<div class="number">3</div>
+					<p>Мы отправляем Ваш заказ</p>
+				</div>
+				<div class="step_item">
+					<img src="images/order_steps__step4_image.jpg" alt="Power Magnetic" title="Power Magnetic">
+					<div class="number">4</div>
+					<p>Вы оплачиваете заказ при получении</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- /order steps -->
+
+		<!-- offer -->
+
+		<section class="offer_section offer_bottom">
+			<div class="info_block">
+				<div class="title_block">
+					<p class="subtitle">Магнитный корректор осанки</p>
+					<h4 class="main_title">Power Magnetic</h4>
+				</div>
+				<ul class="clearfix">
+					<li>Быстрое исправление осанки</li>
+					<li>Избавление от боли в спине</li>
+				</ul>
+				<div class="discount_block">
+					<div class="discount">Скидка <span>-50<i>%</i></span></div>
+				</div>
+			</div>
+			<ul class="benefits_list clearfix">
+				<li>Полезен для здоровья</li>
+				<li>Не стесняет движений</li>
+				<li>Не заметен под одеждой</li>
+				<li>Практичен и долговечен</li>
+			</ul>
+			<div class="timer_block">
+				<p>До конца акции осталось:</p>
+				<script src="//megatimer.ru/get/7503df1699364d0dac53e9d0d8d821eb.js"></script>
+			</div>
+			<div class="price_block">
+				<div class="price_item old">
+					<div class="text">Обычная цена:</div>
+					<div class="value"><x-oldprice>2580</x-oldprice> <x-currency>руб</x-currency></div>
+				</div>
+				<div class="price_item new"><x-newprice>1290</x-newprice> <x-currency>руб</x-currency></div>
+			</div>
+			<form id="order_form" class="order_form" action="" method="post" >
+			    <input name="csrf_token" type="hidden" value="479e1290bacc610b49b48e25f256ced3:1581536707" />
+    <!-- <select name="offer" class="form-control country_chang">
+                <option 
+            data-country-code="KZ"
+                        value="9076"
+        >
+            Казахстан        </option>
+                <option 
+            data-country-code="KG"
+                        value="9075"
+        >
+            Киргизия        </option>
+                <option 
+            data-country-code="MD"
+                        value="13750"
+        >
+            Молдавия        </option>
+                <option 
+            data-country-code="RU"
+                        selected="selected"
+                        value="11813"
+        >
+            Россия        </option>
+                <option 
+            data-country-code="UZ"
+                        value="12362"
+        >
+            Узбекистан        </option>
+                <option 
+            data-country-code="UA"
+                        value="6118"
+        >
+            Украина        </option>
+            </select> -->
+    				<input class="input" type="text" name="name" placeholder="Введите Ваше имя" >
+				<input class="input" type="tel" name="phone" placeholder="Введите Ваш телефон" >
+				<button class="button">Заказать со скидкой</button>
+			</form>
+		</section>
+
+		<!-- /offer -->
+
+		<!-- footer -->
+
+		<footer class="footer_section">
+			<p>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ТРЕЙД"  ОГРН  1 1 7 5 0 5 3 0 1 2 6 2 8  ИНН 5 0 0 1 1 1 5 3 3 1</p>
+<p>143905, ОБЛАСТЬ МОСКОВСКАЯ, ГОРОД БАЛАШИХА, УЛИЦА СВЕРДЛОВА, ДОМ 16/5, ПОМЕЩЕНИЕ V</p> 
+
+  
+              <p class="tlight-link">
+<!--        <a class="nav-link" target="_blank" href="--><?//= $default_main_site ?><!--">Партнёрская программа TLight </a>-->
+      </p>
+    
+    
+            <p class="conf-link doclinks">
+        <a class="nav-link"  href="" onclick="window.open('/policy2.php'); return false;">Политика конфиденциальности </a>
+      </p>
+      
+<!--       <p class="policy-link doclinks"> -->
+<!--         <a class="nav-link"  href="" onclick="window.open('/policy2.php'); return false;">Условия оформления заказа</a> -->
+<!--       </p> -->
+
+    
+		</footer>
+
+		<!-- /footer -->
+
+	</div>
+
+
+        
+        <script src="js/detect.js" type="text/javascript"></script>
+        
+
+
+                <script type="text/javascript">
+                $(function(){
+                    M1.initComebacker(3000);
+                    
+                });
+                </script>
+        
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/scripts.js"></script>
+	
+	<!-- /scripts -->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '206942604036912'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=206942604036912&ev=PageView&noscript=1"/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<link rel="stylesheet" href="/shared/plugins/plugins.css?v=2">
+<script src="/shared/plugins/plugins.js?v=2"></script>
+<script src="/shared/plugins/popup.js?v=6" type="text/javascript"></script>
+<script>    
+    var mainNow = 0;    
+    var productPrice = 1290;
+    var productPriceOld = 2580;
+    var productPricePromo = 1935;
+    var productCurrency = 'руб';
+    var client_city = 'Москва';
+    
+    function check_bottom_margin(){
+        
+        var margin_bottom = 0;
+        
+        if ($('.plugin-quick-order').length || $('#promocode-block').length) {            
+            margin_bottom = 80;            
+        }  
+        
+        if ($('.plugin-delivery-notify').length) {            
+            $('.plugin-delivery-notify').css('bottom', margin_bottom);
+            margin_bottom = 180;
+        } 
+        
+        if ($('.plugin-visitors-online-notify').length) {            
+            $('.plugin-visitors-online-notify').css('bottom', margin_bottom);
+            margin_bottom = 180;
+        } 
+    }
+</script>
+<style>
+    .plugin-made-order { right: 20px; left: auto; bottom: auto; background-color: #2f96b4;}
+</style>
+<script>
+names = shuffleArray(names);
+
+function showMadeOrder() {    
+    this.productPrice = productPrice;
+    this.currency = productCurrency;
+    this.client_city = client_city;
+    this.showItem = 0;
+    
+    this.generateHTML = function (city) {        
+        var client_name = names[Math.floor(Math.random() * names.length)];
+        var name = client_name.name;
+        var gender = client_name.gender;
+        
+        var top = 50;
+        if ($('.freezing-info').length) {
+            top = 229;
+        }
+        
+        var countProduct = getRandomInt(1, 2);
+        var price = countProduct * this.productPrice;
+        var priceInfo = price + ' ' + this.currency;            
+        var str_count = countProduct + ' шт';
+        
+        var gender_action = 'сделал';
+        if(gender === 'f'){
+            gender_action = 'сделала'
+        }
+
+        return (
+        '<div class="plugin-alert-box plugin-made-order" style="top:' + top + 'px;">' +                
+        '<img src="/shared/plugins/icons/notify-buy-white.png">' +
+        '<div class="plugin-notify-text">' + name + ', г. ' + city + ', ' + gender_action + ' заказ ' + str_count + ' на сумму ' + priceInfo + '</div>' +
+        '</div>'
+        );
+    };
+
+    this.newItem = function (html) {        
+        $(html).appendTo($(document.body));
+        $('.plugin-made-order').css('display', 'block')
+            .animate({opacity: 1.0}, 'slow');
+        self.setTimeoutEvent();
+    };
+
+    this.setTimeoutEvent = function () {        
+        setTimeout(function () {
+            $('.plugin-made-order').animate({
+                opacity: 0.1
+            }, 'slow', function () {
+                $('.plugin-made-order').css('display', 'none').remove();
+            });
+        }, 6000);
+    };
+
+    this.nextAction = function () {        
+        var self = this;
+        return function () {
+            var city = self.client_city;
+
+            if (getRandomInt(0, 1)) {
+                city = cityList[Math.floor(Math.random() * cityList.length)];
+            }
+
+            var html = self.generateHTML(city);
+            self.newItem(html);
+
+        }
+    };
+    setInterval(this.nextAction(), 30000);
+}
+
+
+showMadeOrder();
+</script><style>
+    body {padding-top:34px !important;}
+    .visitors-panel-top {
+        overflow: hidden; height: 36px; width:100%;
+        box-sizing: border-box; z-index: 99999; text-align:center; background: #ededed; position: fixed;  top:0; left:0;
+        font-size: 21px; display:inline-block;
+        color: #4f4f4f;    
+        overflow: hidden; height: 36px; width:100%;
+        background: #e8e8e8;        
+        border: 1px dashed #727272;
+    }
+    .visitors-panel-top span {color: #4f4f4f;}
+    .visitors-panel-top.mobile {height: 34px; padding-top: 10px; font-size: 12px !important; box-sizing: border-box;}
+    .visitors-panel-top span {font-family: "Open Sans", sans-serif !important; font-size:20px !important; line-height: 22px;}
+    .visitors-panel-top.mobile .all-today{display:none;}
+    .visitors-today {background-image: url(/shared/plugins/icons/users-color-64.png);height: 28px;padding-left: 45px;background-repeat: no-repeat;background-position: 5px;margin-left: 10px;display: inline-block;padding-top: 8px;margin-top: 0;}
+    .visitors-now {background-image: url(/shared/plugins/icons/eye-color-64.png);height: 28px;padding-left: 45px;background-repeat: no-repeat;background-position: 5px;margin-left: 10px;display: inline-block;padding-top: 8px;margin-top: 0;border-left: 2px dashed #cccccc;}
+    .buy-today {background-image: url(/shared/plugins/icons/buy-color-64.png);height: 28px;padding-left: 45px;background-repeat: no-repeat;background-position: 5px;margin-left: 10px;display: inline-block;padding-top: 8px;margin-top: 0;border-left: 2px dashed #cccccc;}
+    .visitors-panel-top.mobile .visitors-now{border-left:0;}
+</style>
+<script>
+    
+    function onlineVisitorsTop(isMobile) {
+        isMobile = isMobile ? isMobile : false;
+        var visitorsToday = new Date().getHours() * 100 + Math.floor(Math.random() * 700);
+        var now = mainNow !== 0 ? mainNow : getRandomInt(15, 100);
+        mainNow = now;
+        var todayBuy = getRandomInt(50, 100) + new Date().getHours();
+        if (visitorsToday <= todayBuy) {
+            todayBuy = Math.floor(visitorsToday / 2) + 2;
+        }
+        var html = '<div class="visitors-panel-top'+(isMobile ? ' mobile' : '')+'">' +
+            '<span class="visitors-today">Посетителей сегодня: <strong>' + visitorsToday + '</strong></span>' +
+            '<span class="buy-today">Покупок сегодня: <strong>' + todayBuy + '</strong></span>' +
+            '<span class="visitors-now">Сейчас на сайте: <strong>' + now + '</strong></span>' +
+            '</div>';
+        $(html).appendTo($(document.body));
+    }
+    onlineVisitorsTop()
+</script></body>
+</html>

@@ -1,0 +1,716 @@
+/* reset */
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, 
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, 
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, 
+q:before, q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a, input, button {
+	outline: none;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: underline;
+	-webkit-text-decoration-skip: objects;
+}
+
+input, button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: 'Exo20';
+    src: url('../fonts/Exo20-Regular.woff2')/*tpa=https://payshops.ru/korset11/fonts/Exo20-Regular.woff2*/ format('woff2'),
+        url('../fonts/Exo20-Regular.woff')/*tpa=https://payshops.ru/korset11/fonts/Exo20-Regular.woff*/ format('woff'),
+        url('../fonts/Exo20-Regular.ttf')/*tpa=https://payshops.ru/korset11/fonts/Exo20-Regular.ttf*/ format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo20';
+    src: url('../fonts/Exo20-Bold.woff2')/*tpa=https://payshops.ru/korset11/fonts/Exo20-Bold.woff2*/ format('woff2'),
+        url('../fonts/Exo20-Bold.woff')/*tpa=https://payshops.ru/korset11/fonts/Exo20-Bold.woff*/ format('woff'),
+        url('../fonts/Exo20-Bold.ttf')/*tpa=https://payshops.ru/korset11/fonts/Exo20-Bold.ttf*/ format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* styles */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	min-width: 480px;
+	background: #eee;
+	font-family: 'Exo20', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 26px;
+	color: #333;
+	cursor: default;
+}
+
+.main_wrapper {
+	margin: 0 auto;
+	width: 480px;
+	background: #fff;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+b {
+	font-weight: 700;
+}
+
+/* button */
+
+.button {
+	display: block;
+	margin: 0 auto;
+	width: 400px;
+	height: 86px;
+	border: 1px solid #ff8275;
+	-webkit-border-radius: 43px;
+	-moz-border-radius: 43px;
+	border-radius: 43px;
+	background-color: #e85643;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#e85643), to(#f39381));
+	background-image: -webkit-linear-gradient(bottom, #e85643 0%, #f39381 100%);
+	background-image: -moz-linear-gradient(bottom, #e85643 0%, #f39381 100%);
+	background-image: -o-linear-gradient(bottom, #e85643 0%, #f39381 100%);
+	background-image: linear-gradient(to top, #e85643 0%, #f39381 100%);
+	-webkit-box-shadow: 0 6px 0 #db4737;
+	-moz-box-shadow: 0 6px 0 #db4737;
+	box-shadow: 0 6px 0 #db4737;
+	font-family: 'Exo20', sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 84px;
+	color: #fff;
+	text-shadow: 1px 1px 0 #db4737;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+/* titles */
+
+h2 {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 36px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/* offer */
+
+.offer_section {
+	padding: 0 0 36px;
+	background: #cefafd;
+}
+
+.offer_section .info_block {
+	padding: 15px;
+	height: 554px;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+.offer_section.offer_top .info_block {
+	background-image: url(../images/offer_top_bg.jpg)/*tpa=https://payshops.ru/korset11/images/offer_top_bg.jpg*/;
+}
+
+.offer_section.offer_bottom .info_block {
+	background-image: url(../images/offer_bottom_bg.jpg)/*tpa=https://payshops.ru/korset11/images/offer_bottom_bg.jpg*/;
+}
+
+.offer_section .title_block {
+	margin: 0 0 10px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.offer_section .title_block .subtitle {
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 1px;
+}
+
+.offer_section .title_block .main_title {
+	font-weight: 700;
+	font-size: 50px;
+	line-height: 50px;
+	color: #f44e3c;
+}
+
+.offer_section .info_block ul li {
+	float: left;
+	margin: 0 10px 0 5px;
+	padding: 10px 8px 10px 44px;
+	width: 215px;
+	background: #27b561 url(../images/offer__tick_icon.png)/*tpa=https://payshops.ru/korset11/images/offer__tick_icon.png*/ 10px center no-repeat;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 18px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.offer_section .info_block ul li:last-child {
+	margin: 0;
+}
+
+.offer_section .discount_block {
+	padding: 5px;
+	width: 130px;
+	height: 130px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #fa5641;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#fd8f79), to(#fa5641));
+	background-image: -webkit-linear-gradient(bottom, #fd8f79 0%, #fa5641 100%);
+	background-image: -moz-linear-gradient(bottom, #fd8f79 0%, #fa5641 100%);
+	background-image: -o-linear-gradient(bottom, #fd8f79 0%, #fa5641 100%);
+	background-image: linear-gradient(to top, #fd8f79 0%, #fa5641 100%);
+}
+
+.offer_section.offer_top .discount_block {
+	margin: 240px 0 0 5px;
+}
+
+.offer_section.offer_bottom .discount_block {
+	margin: 20px 0 0 315px;
+}
+
+.offer_section .discount_block .discount {
+	padding: 24px 0 0;
+	width: 120px;
+	height: 120px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #fd8f7a;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#fb503b), to(#fd8f7a));
+	background-image: -webkit-linear-gradient(bottom, #fb503b 0%, #fd8f7a 100%);
+	background-image: -moz-linear-gradient(bottom, #fb503b 0%, #fd8f7a 100%);
+	background-image: -o-linear-gradient(bottom, #fb503b 0%, #fd8f7a 100%);
+	background-image: linear-gradient(to top, #fb503b 0%, #fd8f7a 100%);
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 30px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.offer_section .discount_block .discount span {
+	font-size: 40px;
+}
+
+.offer_section .discount_block .discount i {
+	font-size: 30px;
+}
+
+.offer_section .benefits_list {
+	margin: 0 0 30px;
+	padding: 15px 0;
+	background: #25ad5d;
+}
+
+.offer_section .benefits_list li {
+	float: left;
+	padding: 0 8px;
+	width: 120px;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	position: relative;
+}
+
+.offer_section .benefits_list li:before {
+	display: block;
+	content: '';
+	margin: 0 auto 5px;
+	width: 100%;
+	height: 35px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.offer_section .benefits_list li:nth-child(1):before {
+	background-image: url(../images/offer__benefit1_icon.png)/*tpa=https://payshops.ru/korset11/images/offer__benefit1_icon.png*/;
+}
+
+.offer_section .benefits_list li:nth-child(2):before {
+	background-image: url(../images/offer__benefit2_icon.png)/*tpa=https://payshops.ru/korset11/images/offer__benefit2_icon.png*/;
+}
+
+.offer_section .benefits_list li:nth-child(3):before {
+	background-image: url(../images/offer__benefit3_icon.png)/*tpa=https://payshops.ru/korset11/images/offer__benefit3_icon.png*/;
+}
+
+.offer_section .benefits_list li:nth-child(4):before {
+	background-image: url(../images/offer__benefit4_icon.png)/*tpa=https://payshops.ru/korset11/images/offer__benefit4_icon.png*/;
+}
+
+.offer_section .benefits_list li:after {
+	display: block;
+	content: '';
+	width: 2px;
+	height: 40px;
+	background: #1e894a;
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	right: -1px;
+}
+
+.offer_section .benefits_list li:nth-child(4):after {
+	display: none;
+}
+
+.offer_section .price_block {
+	margin: 0 auto 30px;
+	width: 400px;
+	text-align: center;
+}
+
+.offer_section .price_block .price_item {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.offer_section .price_block .price_item.old .text {
+	font-size: 14px;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+
+.offer_section .price_block .price_item.old .value {
+	font-size: 36px;
+	line-height: 36px;
+	text-decoration: line-through;
+}
+
+.offer_section .price_block .price_item.new {
+	margin: -8px 0 0 25px;
+	font-weight: 700;
+	font-size: 50px;
+	line-height: 50px;
+	color: #f44e3c;
+}
+
+.offer_section .timer_block {
+	margin: 0 auto 30px;
+	width: 400px;
+	text-align: center;
+}
+
+.offer_section .timer_block p {
+	margin: 0 0 15px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+
+.offer_section .timer_block .timer_item {
+	float: left;
+	margin: 0 29px 0 0;
+	width: 114px;
+	position: relative;
+}
+
+.offer_section .timer_block .timer_item:last-child {
+	margin: 0;
+}
+
+.offer_section .timer_block .timer_item:before {
+	display: block;
+	content: ':';
+	width: 29px;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 50px;
+	color: #27b561;
+	position: absolute;
+	top: 0;
+	right: -29px;
+}
+
+.offer_section .timer_block .timer_item:last-child:before {
+	display: none;
+}
+
+.offer_section .timer_block .count {
+	margin: 0 0 5px;
+}
+
+.offer_section .timer_block .count span {
+	display: block;
+	float: left;
+	margin: 0 6px 0 0;
+	width: 54px;
+	height: 60px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background: #27b561;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 58px;
+	color: #fff;
+}
+
+.offer_section .timer_block .count span:last-child {
+	margin: 0;
+}
+
+.offer_section .timer_block .text {
+	line-height: 18px;
+}
+
+.offer_section .input {
+	display: block;
+	margin: 0 auto 20px;
+	padding: 0 20px;
+	width: 400px;
+	height: 76px;
+	border: 1px solid #b8e0e3;
+	-webkit-border-radius: 38px;
+	-moz-border-radius: 38px;
+	border-radius: 38px;
+	background: #fff;
+	-webkit-box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1);
+	font-family: 'Exo20', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	color: #333;
+	text-align: center;
+}
+
+.offer_section .input::-webkit-input-placeholder {
+	opacity: 1;
+	color: #333;
+}
+
+.offer_section .input:-moz-placeholder {
+	opacity: 1;
+	color: #333;
+}
+
+.offer_section .input::-moz-placeholder {
+	opacity: 1;
+	color: #333;
+}
+
+.offer_section .input:-ms-input-placeholder {
+	opacity: 1;
+	color: #333;
+}
+
+.offer_section .input:focus::-webkit-input-placeholder {
+	opacity: 0;
+}
+
+.offer_section .input:focus:-moz-placeholder {
+	opacity: 0;
+}
+
+.offer_section .input:focus::-moz-placeholder {
+	opacity: 0;
+}
+
+.offer_section .input:focus:-ms-input-placeholder {
+	opacity: 0;
+}
+
+/* benefits */
+
+.benefits_section {
+	padding: 30px 20px 0;
+	background: #26b25f;
+	color: #fff;
+}
+
+.benefits_section h2 {
+	margin: 0 0 30px;
+}
+
+.benefits_section .benefit_item {
+	float: left;
+	margin: 0 20px 30px 0;
+	width: 210px;
+	text-align: center;
+}
+
+.benefits_section .benefit_item:nth-child(even) {
+	margin: 0 0 30px;
+}
+
+.benefits_section .benefit_item img {
+	display: block;
+	margin: 0 auto 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* about */
+
+.about_section {
+	padding: 30px 0 36px;
+}
+
+.about_section h2 {
+	margin: 0 20px 20px;
+	color: #219752;
+}
+
+.about_section p {
+	margin: 0 20px 30px;
+	text-align: center;
+}
+
+.about_section img {
+	display: block;
+	margin: 0 auto 30px;
+}
+
+/* causes */
+
+.causes_section {
+	padding: 30px 0 0;
+	background: #f7f7f7;
+}
+
+.causes_section h2 {
+	margin: 0 20px 30px;
+	color: #f44e3c;
+}
+
+.causes_section .cause_item {
+	display: table;
+	width: 100%;
+	background: #33373c;
+}
+
+.causes_section .cause_item .image_block {
+	display: table-cell;
+	vertical-align: middle;
+	width: 240px;
+}
+
+.causes_section .cause_item img {
+	display: block;
+}
+
+.causes_section .cause_item .text_block {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 20px;
+	width: 240px;
+	color: #fff;
+	text-align: center;
+}
+
+.causes_section .cause_item .icon {
+	margin: 0 auto 10px;
+	width: 51px;
+	height: 51px;
+	background: url(../images/causes__cross_icon.png)/*tpa=https://payshops.ru/korset11/images/causes__cross_icon.png*/ center no-repeat;
+}
+
+/* reviews */
+
+.reviews_section {
+	padding: 30px 20px;
+	text-align: center;
+}
+
+.reviews_section h2 {
+	margin: 0 0 30px;
+	color: #219752;
+}
+
+.reviews_section .review_item img {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.reviews_section .review_item .author_info {
+	margin: 15px 0 5px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.reviews_section .owl-prev, 
+.reviews_section .owl-next {
+	width: 50px;
+	height: 70px;
+	background-color: #219752;
+	background-image: url(../images/reviews__arrows.png)/*tpa=https://payshops.ru/korset11/images/reviews__arrows.png*/;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 115px;
+}
+
+.reviews_section .owl-prev {
+	-webkit-border-radius: 0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0;
+	border-radius: 0 10px 10px 0;
+	background-position: left center;
+	left: 0;
+}
+
+.reviews_section .owl-next {
+	-webkit-border-radius: 10px 0 0 10px;
+	-moz-border-radius: 10px 0 0 10px;
+	border-radius: 10px 0 0 10px;
+	background-position: right center;
+	right: 0;
+}
+
+/* order steps */
+
+.order_steps_section {
+	padding: 30px 20px 0;
+	background: #26b25f;
+	color: #fff;
+}
+
+.order_steps_section h2 {
+	margin: 0 0 30px;
+}
+
+.order_steps_section .step_item {
+	float: left;
+	margin: 0 20px 30px 0;
+	width: 210px;
+	text-align: center;
+}
+
+.order_steps_section .step_item:nth-child(even) {
+	margin: 0 0 30px;
+}
+
+.order_steps_section .step_item img {
+	display: block;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.order_steps_section .step_item .number {
+	margin: -30px auto 10px;
+	width: 60px;
+	height: 60px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background: #fffb85;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 58px;
+	color: #333;
+	position: relative;
+	z-index: 10;
+}
+
+/* footer */
+
+.footer_section {
+	padding: 25px 0;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.footer_section img {
+	display: block;
+	margin: 0 auto 10px auto;
+}
+
+.footer_section a {
+	color: #333;
+}

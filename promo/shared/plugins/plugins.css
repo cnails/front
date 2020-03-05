@@ -1,0 +1,474 @@
+.plugin-alert-box {
+    pointer-events: auto;
+    overflow: hidden;
+    margin: 0 0 6px;
+    padding: 15px 20px;
+    width: 300px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-position: 15px center;
+    background-color: #4f4f4f;
+    background-repeat: no-repeat;
+    -moz-box-shadow: 0 0 12px #999;
+    -webkit-box-shadow: 0 0 12px #999;
+    box-shadow: 0 0 12px #999;
+    color: #fff;
+    opacity: .9;    
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    filter: alpha(opacity=80);
+    z-index:99999;
+    position:fixed;
+    border: 0;
+    vertical-align: baseline;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.plugin-alert-box img {width:50px; height: 50px; float: left;padding-right: 10px;border:0;}
+
+.plugin-alert-close{
+    width:15px;
+    height:15px;
+    cursor: pointer;
+    position:absolute; right:2px; top:2px;
+    font-size: 22px;
+    line-height: 0.6;
+    text-align: center;
+    border: none;
+}
+
+.plugin-notify-text {font-size: 16px;}
+/* promocode */
+
+#promocode-block{ 
+    position: fixed;
+    width: 100%;    
+    height: 70px;
+    vertical-align: middle;
+    bottom: 0; 
+    left: 0;
+    z-index: 99998;
+    padding: 12px 10px;
+    transition: 0.3s;
+    font-family: 'Arial', sans-serif;
+    border: 2px dashed #333;
+    background: #fff;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+#promocode-block .promocode-success, #promocode-block .promocode-error {display: none; font-size: 18px; line-height: 34px;}
+#promocode-block .promocode-success {color: #008000; }
+#promocode-block .promocode-error {color: #DD070B; }
+
+#promocode-block input[type=text] {
+    position: relative;
+    display: inline-block;
+    width: 200px; 
+    height: 42px;
+    margin: 0 2px 0 0;
+    font-size: 16px; 
+    font-weight: 400;
+    line-height: 34px;
+    text-indent: 10px;
+    text-align: left;
+    border: solid 2px #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.2s;
+    box-shadow: none;
+    text-shadow: none;
+    transform: none;
+    color:#222;
+    float: left;
+}
+
+#promocode-block button {
+    position: relative;
+    display: inline-block; 
+    height: 42px;
+    padding: 0 30px; 
+    margin: 0;
+    cursor: pointer; 
+    border-radius: 4px;
+    background: #43c36b; 
+    color: #FFF; 
+    font-size: 18px; 
+    font-weight: 400;
+    line-height: 1.3;
+    transition: all 0.2s;
+    box-shadow: none;
+    text-shadow: none;
+    border: solid 2px #40b35e;
+    transform: none;
+}
+#promocode-block .promocode-inner {width: 650px; max-height: 46px; margin: 0 auto; overflow: hidden; text-align: center;}
+#promocode-block .title {font-size: 20px; text-transform: uppercase; line-height: 42px; float: left; height: 42px; margin-right: 10px;}
+#promocode-block .promocode-form {text-align: center;}
+
+@media screen and (max-width: 480px) {
+    #promocode-block {
+        width: 480px;
+        margin: 0px auto;
+        left:50%;
+        margin-left: -240px;
+    }
+    #promocode-block .promocode-inner {
+        width: 340px;
+    }
+    .promocode-form .title {
+        display: none;
+    }
+    #promocode-block input[type=text] {
+        width: 150px; 
+    }
+}
+/* end promocode */
+
+/* quick order */
+#plugin-quick-order{ 
+    position: fixed;
+    width: 100%;    
+    bottom: 0; 
+    left: 0;
+    z-index: 99998;
+    padding: 12px 10px;
+    transition: 0.3s;
+    font-family: 'Arial', sans-serif;
+    border: 2px dotted #689fd0;
+    background: #7ac2f3;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+#plugin-quick-order:hover {border-top: 2px dotted #ffd116; border-bottom: 2px dotted #ffd116;}
+#plugin-quick-order .plugin-quick-order-inner {width: 1120px; max-height: 46px; margin: 0 auto; overflow: hidden;}
+
+#plugin-quick-order .plugin-quick-order-left, #plugin-quick-order .plugin-quick-order-inner input, #plugin-quick-order .plugin-quick-order-inner span, #plugin-quick-order .plugin-quick-order-inner form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    vertical-align: top;
+    background: transparent;
+    font-family: 'Arial', sans-serif;
+    width: auto;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+#plugin-quick-order .plugin-quick-order-left { 
+    position: relative;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0;
+    font-size: 17px;
+    text-align: right;
+    color: #fff;    
+}
+#plugin-quick-order .plugin-quick-order-inner div.plugin-quick-order-price b, #plugin-quick-order .plugin-quick-order-inner .plugin-quick-order-left>span{ 
+    display: inline-block;
+    padding: 0 15px;
+    color: #222; 
+    font-weight: 700;
+    background: #ffb13e;
+    border-radius: 10px;
+}
+#plugin-quick-order .inner .plugin-quick-order-left>span{
+    margin-right: 10px;
+}
+#plugin-quick-order .plugin-quick-order-left .plugin-quick-order-title {font-size: 20px; text-transform: uppercase; line-height: 24px;}
+#plugin-quick-order form{float:left; height: 42px; max-width: inherit;}
+
+#plugin-quick-order-mobile_form input[type=text], #plugin-quick-order-mobile_form input[type=phone], #plugin-quick-order-mobile_form select{
+    position: relative;
+    display: inline-block;
+    width: 200px; 
+    height: 42px;
+    margin: 0 2px 0 0;
+    font-size: 16px; 
+    font-weight: 400;
+    line-height: 34px;
+    text-indent: 10px;
+    text-align: left;
+    border: solid 2px #689fd0;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.2s;
+    box-shadow: none;
+    text-shadow: none;
+    transform: none;
+    color:#222;
+}
+#plugin-quick-order-mobile_form input[type=text]:focus{background:#edffd9; transform: none;}
+#plugin-quick-order-mobile_form input[type=submit]{
+    position: relative;
+    display: inline-block; 
+    height: 42px;
+    padding: 0 30px; 
+    cursor: pointer; 
+    border-radius: 4px;
+    background: #43c36b; 
+    color: #FFF; 
+    font-size: 18px; 
+    font-weight: 400;
+    line-height: 1.3;
+    transition: all 0.2s;
+    box-shadow: none;
+    text-shadow: none;
+    border: solid 2px #40b35e;
+    transform: none;
+}
+#plugin-quick-order-mobile_form input[type=submit]:hover {background: #51d87b; transform: none;}
+
+#plugin-quick-order div.plugin-quick-order-price{ 
+    position: relative;
+    float: right;     
+    padding: 0;
+    font-size: 18px;
+    text-align: right;
+    color: #fff; 
+    white-space: nowrap; 
+}
+#plugin-quick-order div.plugin-quick-order-price s{
+    color: #d02b3f;
+}
+#plugin-quick-order div.plugin-quick-order-price b{
+    margin: 0 0 0 8px;
+    vertical-align: top;
+}
+
+#plugin-quick-order .plugin-quick-order-select-country{width: 200px; float: left; margin-right: 5px;}
+#plugin-quick-order .plugin-quick-order-select-country select {padding: 0;}
+
+@media screen and (max-width: 1100px){
+    #plugin-quick-order .plugin-quick-order-inner{
+        width: 920px;
+    }
+    #plugin-quick-order div.plugin-quick-order-price{
+        display: none;
+    }
+}
+@media screen and (max-width: 920px){
+    #plugin-quick-order .plugin-quick-order-inner{
+        width: 580px;
+    }
+    #plugin-quick-order .plugin-quick-order-left{
+        display: none;
+    }
+}
+@media screen and (max-width: 580px){
+    #plugin-quick-order{
+        display: none;
+    }
+}
+
+/* end quick order */
+
+/* modal popup */
+
+#recall-form, #recall-form>div, .close-recall, .popup-recall-title, .popup-recall-cont, .popup-recall-form, .popup-recall-text2, .popup-recall-text1, #recall-form .popup-recall-form input[type="text"],#recall-form .popup-recall-form button{width: auto; max-width: none; height: auto; max-height: none; margin: 0; padding: 0; border: 0; outline: 0; float: none; position: relative; background: none; line-height: normal; font-family: "Tahoma", "Geneva", "Kalimati", sans-serif; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+#recall-form {
+    position: fixed;
+    display: none;
+    width: 450px;
+    margin-left: -225px;
+    margin-top: -280px;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    z-index: 9999998;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow:    0px 0px 0px 0px rgba(0, 0, 0, 0);
+    box-shadow:         0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+#recall-form a.close-recall {
+    position: absolute;
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 26px;
+    top: 3px;
+    right: 3px;
+    background: transparent;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999999;
+}
+#recall-form a.close-recall:before{
+    content: '\00D7';
+}
+#recall-form>div{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+#recall-form .popup-recall-title{
+    position: relative;
+    padding: 20px 0px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 0.7px;
+    line-height: 1.3em;
+    color: #fff;
+    background: #167ac6;
+}
+
+#recall-form .popup-recall-cont{
+    position: relative;
+    padding: 25px 20px 30px;
+    color: #333;
+    font-size: 17px;
+    line-height: 1.5em;
+}
+#recall-form .popup-recall-cont div.popup-recall-text1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+#recall-form .popup-recall-form{
+    position: relative;
+    display: block;
+    height: auto;
+    width: auto;
+    background: none;
+    padding: 30px 0;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow:    0 0 0 0;
+    box-shadow:         0 0 0 0;
+    background-color: #f2f2f2;
+}
+#recall-form .popup-recall-form:after{
+    content: '';
+    display: block;
+    clear: both;
+    height: 0px;
+}
+#recall-form .popup-recall-form input[type="text"], #recall-form .popup-recall-form input[type="phone"], #recall-form .popup-recall-form button{
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow:    0 0 0 0;
+    box-shadow:         0 0 0 0;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    outline: none;
+}
+#recall-form .popup-recall-form button{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#recall-form .popup-recall-form input[type="text"], #recall-form .popup-recall-form input[type="phone"]{
+    width: 90%;
+    height: 64px;
+    margin-bottom: 16px;
+    line-height: 64px;
+    font-size: 17px;
+    color: #222;
+    background: #fff;
+    text-indent: 20px;
+    border: 1px solid #ccc;
+    text-shadow: none;
+}
+#recall-form .popup-recall-form input[type="text"]:focus{
+    border-color: #aaa;
+}
+#recall-form .popup-recall-form button{
+    width: 90%;
+    height: 68px;
+    line-height: 68px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    border-bottom: 3px solid #dd070b;
+    background: #e54144;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow:    0 0 0 0;
+    box-shadow:         0 0 0 0;
+    text-shadow: 0px 0px 0px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+#recall-form .popup-recall-form button:hover{
+    background: #d03538;
+}
+#recall-form .popup-recall-form button:active{
+    top: -1px;
+}
+#recall-form .popup-recall-cont div.popup-recall-bottom{
+    text-align: center;
+}
+#recall-form .popup-recall-cont div.popup-recall-bottom1:before{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin: 0;
+    top: 2px;
+}
+
+@media screen and (max-width: 480px){
+    #recall-form, .recall-animation {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 520px){
+    #recall-form{
+        width: 400px;
+    }
+}
+
+/**********For screen**********/
+ #overlay-popup-recall {
+    display: none;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+    z-index: 999999;
+}
+
+/* end modal popup */
