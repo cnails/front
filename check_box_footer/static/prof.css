@@ -1,0 +1,27 @@
+.filter{
+    width: 80%;
+} 
+.filter label{
+	user-select: none;
+}
+.filter input:checked + span{
+	color: #fff;
+	border-color: #574dc2;
+	background: #574dc2;
+	transition: border-color 1s ease-out;
+	transition: background 1s ease-out;
+}
+
+.filter label input{
+	width: 0;
+	opacity: 0;
+	height: 0;
+}
+.filter label span{
+	white-space: nowrap;
+	border: 1px solid #000;
+	font-size: 15px;
+	line-height: 50px;
+	padding: 10px 10px;
+	border-radius: 100px;
+}

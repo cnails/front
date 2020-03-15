@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- <script src = "js.js"></script> -->
+	<!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/> -->
+	<!-- <link rel="stylesheet" href="https://cssanimation.rocks/css/custom/animations_transitions.css"> -->
+	<!-- <link rel="stylesheet" href="https://cssanimation.rocks/css/main.css"> -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='prof.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+	<title>Document</title>
+</head>
+<body>
+	<main>
+	<!-- <main class="measure center tc sans-serif black-80 absolute absolute--fill"> -->
+		<!-- <section class="shiny demo-container tap-to-activate">
+			<button>Shiny effect</button>
+		</section> -->
+		<!-- <div class="content_block"> -->
+			<!-- <div> -->
+					<div class="filter demo-container">
+						<form method="post" class="content_block">
+							<input value = "{{ count }}" type="hidden" name="old_count">
+							<span>{{ count }}</span>
+							<ul>
+								{% for i in range(count) %}
+								<label class="last_label">
+									<input type="checkbox" name="option" value="c{{i + 1}}">
+									<span>List item {{ i + 1 }}</span>
+								</label>
+								{% endfor %}
+							</ul>
+							<button class="btn">button</button>
+						</form>
+					</div>
+						
+
+		<!-- <div class="wrapper">
+				{% for elem in elems %}
+					<div class="project">
+						<h3 style="text-align: center">{{ elem }}</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus delectus, iste, optio quos cum minima ipsa quis provident aspernatur impedit qui nostrum quibusdam labore doloribus laudantium accusantium quia. Quisquam, necessitatibus.</p>
+						<ul>
+							<li>asdasdasd</li>
+							<li>asdasd</li>
+							<li>asdasd</li>
+							<li>asdasd</li>
+						</ul>
+					</div>
+				{% endfor %}
+		</div> -->
+		<!-- <div class="demo-container"> -->
+			<div class="cntr">
+				<div class="bg_photo">
+					<a href="#">
+						<h3></br>Click here</h3>
+					</a>
+				</div>
+			</div>
+			
+		<!-- </div> -->
+		<div class="wrapper">
+			<div class="project">
+				{% for elem in elems %}
+					<a href="#">
+						<h3 style="text-align: center">Item {{ elem[1:] }}</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus delectus, iste, optio quos cum minima ipsa quis provident aspernatur impedit qui nostrum quibusdam labore doloribus laudantium accusantium quia. Quisquam, necessitatibus.</p>
+						<ul>
+							<li>asdasdasd</li>
+							<li>asdasd</li>
+							<li>asdasd</li>
+							<li>asdasd</li>
+						</ul>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+		<footer>
+			<svg width="150" height="150" viewBox="0 0 24 24">
+			<path fill="white" d="M12,8L10.67,8.09C9.81,7.07 7.4,4.5 5,4.5C5,4.5 3.03,7.46 4.96,11.41C4.41,12.24 4.07,12.67 4,13.66L2.07,13.95L2.28,14.93L4.04,14.67L4.18,15.38L2.61,16.32L3.08,17.21L4.53,16.32C5.68,18.76 8.59,20 12,20C15.41,20 18.32,18.76 19.47,16.32L20.92,17.21L21.39,16.32L19.82,15.38L19.96,14.67L21.72,14.93L21.93,13.95L20,13.66C19.93,12.67 19.59,12.24 19.04,11.41C20.97,7.46 19,4.5 19,4.5C16.6,4.5 14.19,7.07 13.33,8.09L12,8M9,11A1,1 0 0,1 10,12A1,1 0 0,1 9,13A1,1 0 0,1 8,12A1,1 0 0,1 9,11M15,11A1,1 0 0,1 16,12A1,1 0 0,1 15,13A1,1 0 0,1 14,12A1,1 0 0,1 15,11M11,14H13L12.3,15.39C12.5,16.03 13.06,16.5 13.75,16.5A1.5,1.5 0 0,0 15.25,15H15.75A2,2 0 0,1 13.75,17C13,17 12.35,16.59 12,16V16H12C11.65,16.59 11,17 10.25,17A2,2 0 0,1 8.25,15H8.75A1.5,1.5 0 0,0 10.25,16.5C10.94,16.5 11.5,16.03 11.7,15.39L11,14Z" /> </svg>
+		</footer>
+</body>
+</html>
