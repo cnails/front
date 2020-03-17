@@ -1,8 +1,16 @@
 import os
 from random import randint
+
 from flask import Flask, render_template, request, url_for
+import vincent as vi
 
 app = Flask(__name__)
+
+def visualiter(count, step):
+	# vincent.core.initialize_notebook()
+	line = vi.Line([i for i in range(count)])
+	line.axis_titles(x='X-axis', y='Y-axis')
+	line.to_json('example.json', html_out=True, html_path='examle.html')
 
 @app.context_processor
 def override_url_for():
@@ -33,5 +41,4 @@ def main():
 	return render_template('index.html', count=count, elems=elems)
 
 if __name__ == "__main__":
-	app.run(debug=True)
-
+	app.run(debug=True, port='5000')
